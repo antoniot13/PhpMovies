@@ -36,7 +36,7 @@
                                     <input type="text" class="form-control" placeholder="Search">
                                     <div class="input-group-btn">
                                         <button class="btn btn-default" type="submit">
-                                            <i class="glyphicon glyphicon-send"></i>
+                                            <i class="glyphicon glyphicon-search"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="panel-body">
-                    @for ($i = 0; $i < 12; $i++)
+                    @for ($i = 0; $i < 22; $i++)
                         <div class="col-md-3">
                             <div class="thumbnail">
                                 <img src="http://placehold.it/320x200" alt="">
@@ -54,14 +54,12 @@
                                     <h4><a href="#">Movie {{$i}}</a></h4>
                                     <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
-                                <div class="ratings">
-                                    <p>
+                                <div class="ratings text-right">
                                         <span class="glyphicon glyphicon-star"></span>
                                         <span class="glyphicon glyphicon-star"></span>
                                         <span class="glyphicon glyphicon-star"></span>
                                         <span class="glyphicon glyphicon-star"></span>
                                         <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
                                 </div>
                             </div>
                         </div>
