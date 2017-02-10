@@ -13,8 +13,6 @@
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-
-
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
     <!-- Scripts -->
@@ -23,6 +21,53 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $(function(){
+            $("#q").focus(); //Focus on search field
+            $("#q").autocomplete({
+                minLength: 0,
+                delay:5,
+                source: 'suggest.php',
+                focus: function( event, ui ) {
+                    $(this).val( ui.item.value );
+                    return false;
+                },
+                select: function( event, ui ) {
+                    $(this).val( ui.item.value );
+                    return false;
+                }
+            }).data("uiAutocomplete")._renderItem = function( ul, item ) {
+                return $("<li></li>")
+                    .data( "item.autocomplete", item )
+                    .append( "<a>" + (item.img?"<img class='imdbImage' src='imdbImage.php?url=" + item.img + "' />":"") + "<span class='imdbTitle'>" + item.label + "</span>" + (item.cast?"<br /><span class='imdbCast'>" + item.cast + "</span>":"") + "<div class='clear'></div></a>" )
+                    .appendTo( ul );
+            };
+        });
+    </script>
+    <style type="text/css">
+        .ui-menu-item .imdbTitle{
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        .ui-menu-item .imdbCast{
+            font-size: 0.7em;
+            font-style: italic;
+            line-height: 110%;
+            color: #666;
+        }
+        .ui-menu-item .imdbImage{
+            float: left;
+            margin-right: 5px;
+        }
+        .ui-menu-item .clear{
+            clear: both;
+        }
+    </style>
 
 </head>
 <body>
@@ -98,10 +143,11 @@
                 </div>
             </div>
         </div>
-        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
     </footer>
 
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
+
+
+    <!-- Scripts
+    <script src="/js/app.js"></script> -->
 </body>
 </html>

@@ -31,11 +31,12 @@
                             </div>
                         </div>
                         <div class="col-md-3 col-md-offset-5">
-                            <form>
+                            <form id="form" name="form" method="get" action="http://www.imdb.com/find">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search">
+                                    <input type="text" name="q" id="q" class="form-control" placeholder="Search">
+                                    <input name="s" value="all" type="hidden" />
                                     <div class="input-group-btn">
-                                        <button class="btn btn-default" type="submit">
+                                        <button name="submit" class="btn btn-default" type="submit">
                                             <i class="glyphicon glyphicon-search"></i>
                                         </button>
                                     </div>
@@ -46,7 +47,7 @@
                 </div>
 
                 <div class="panel-body">
-                    @for ($i = 0; $i < 22; $i++)
+                    @for ($i = 0; $i < 20; $i++)
                         <div class="col-md-3">
                             <div class="thumbnail">
                                 <img src="http://placehold.it/320x200" alt="">
@@ -55,11 +56,11 @@
                                     <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
                                 <div class="ratings text-right">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class  ="glyphicon glyphicon-star-empty"></span>
                                 </div>
                             </div>
                         </div>
