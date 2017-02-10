@@ -9,11 +9,12 @@
                     <div class="row">
                         <div class="col-md-2">
                             <div class="dropdown">
-                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Sort by:
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Order by:
                                     <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Rate</a></li>
-                                    <li><a href="#">Views</a></li>
+                                    <li><a href="#">Title A-Z</a></li>
+                                    <li><a href="#">Most Popular</a></li>
+                                    <li><a href="#">Community Rating</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -22,6 +23,7 @@
                                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Genre:
                                     <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
+                                    <li><a href="#">All Genres</a></li>
                                     <li><a href="#">Comedy</a></li>
                                     <li><a href="#">Horror</a></li>
                                     <li><a href="#">Drama</a></li>
@@ -44,7 +46,26 @@
                 </div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    @for ($i = 0; $i < 12; $i++)
+                        <div class="col-md-3">
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/320x200" alt="">
+                                <div class="caption">
+                                    <h4><a href="#">Movie {{$i}}</a></h4>
+                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                                <div class="ratings">
+                                    <p>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    @endfor
                 </div>
             </div>
         </div>

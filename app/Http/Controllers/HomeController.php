@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Movie;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+       // $movies = Movie::orderBy('genre','comedy')->paginate(12);
+
+        return view('home');//->withMovies($movies);
     }
 }
