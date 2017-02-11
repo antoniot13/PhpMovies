@@ -1,23 +1,16 @@
 <?php
 
+namespace app;
+
 include 'TMDb.php';
 include 'Movie.php';
+include 'DBImpl.php';
 
-$apiKey = '45fb341c9e1114958b519e32556afaa1';
+echo DBImpl::getRatingsForMovie('1') . "<br />";
 
-$tmdb = new TMDb($apiKey);
-
-$list = $tmdb->searchMovie('The Godfather');
-
-$movies_array = array();
-
-foreach($list["results"] as $temp) {
-    #print_r($temp);
-    #echo $temp["title"] . "<br />";
-    $m = new Movie($temp["title"], $temp["id"], $temp["poster_path"], $temp["overview"], $temp["popularity"],
-        $temp["vote_count"], $temp["vote_average"], $temp["release_date"], $temp["genre_ids"]);
-    array_push($movies_array, $m);
-    var_dump($m);
+foreach (DBImpl::getCommentsForMovie('1') as $UserId => $Comment) {
+    echo $UserId . " : " . $Comment . "<br />";
 }
 
-#var_dump($movies_array);
+echo DBImpl::getUserById('1') . "<br />";
+
