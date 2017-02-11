@@ -1,8 +1,6 @@
 <?php
 
-
 namespace app;
-
 
 class TMDb
 {
@@ -509,7 +507,7 @@ class TMDb
         {
             if($this->getDebugMode())
             {
-                throw new TMDbException('No valid request token from TMDb');
+                //throw new TMDbException('No valid request token from TMDb');
             }
             else
             {
@@ -703,6 +701,11 @@ class TMDb
      * @param string $size				Valid size for the image
      * @return string
      */
+    public function getBaseUrl() {
+        $config = $this->getConfig();
+        return $config['images']['base_url'];
+    }
+
     public function getImageUrl($filepath, $imagetype, $size)
     {
         $config = $this->getConfig();
@@ -718,12 +721,12 @@ class TMDb
             }
             else
             {
-                throw new TMDbException('The size "'.$size.'" is not supported by TMDb');
+                //throw new TMDbException('The size "'.$size.'" is not supported by TMDb');
             }
         }
         else
         {
-            throw new TMDbException('No configuration available for image URL generation');
+            //throw new TMDbException('No configuration available for image URL generation');
         }
     }
 
@@ -743,7 +746,7 @@ class TMDb
         }
         else
         {
-            throw new TMDbException('No configuration available to retrieve available image sizes');
+            //throw new TMDbException('No configuration available to retrieve available image sizes');
         }
     }
 
@@ -830,14 +833,14 @@ class TMDb
 
             if($error_number > 0)
             {
-                throw new TMDbException('Method failed: '.$function.' - '.$error_message);
+                //throw new TMDbException('Method failed: '.$function.' - '.$error_message);
             }
 
             curl_close($ch);
         }
         else
         {
-            throw new TMDbException('CURL-extension not loaded');
+            //throw new TMDbException('CURL-extension not loaded');
         }
 
         $results = json_decode($body, TRUE);
@@ -858,7 +861,7 @@ class TMDb
         }
         else
         {
-            throw new TMDbException('Server error on "'.$url.'": '.$response);
+            //throw new TMDbException('Server error on "'.$url.'": '.$response);
         }
     }
 
@@ -937,4 +940,12 @@ class TMDb
         return $return;
     }
 }
+
+/**
+ * TMDb Exception class
+ *
+ * @author Jonas De Smet - Glamorous
+ */
+#class TMDbException extends Exception{}
+
 ?>

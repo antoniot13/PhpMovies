@@ -56,8 +56,8 @@
                 </div>
 
                 <div class="panel-body">
-
-                    {{$movies}}
+                    <?php var_dump($movies[0]->base_url ) ?>
+                    <?php var_dump($movies[0]->image ) ?>
                     <div class="row list-group" id="products">
                     @for ($i = 0; $i < 20; $i++)
                         <div class="col-md-3 item">

@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Movie;
 use App\TMDBImpl;
-use App\TMDb;
-use App\TMDbException;
 
 use Illuminate\Http\Request;
 
@@ -29,8 +27,8 @@ class HomeController extends Controller
     public function index()
     {
        $movies = TMDBImpl::getMovies();
-
-       return view('home')->withMovies($movies);
+       //$movies[0]
+       return view('home', ['movies' => $movies]);
         //return view('home')->with('movies', 'balu');//->withMovies($movies);
     }
 }

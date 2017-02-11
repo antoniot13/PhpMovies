@@ -18,7 +18,8 @@ class TMDBImpl {
 
         foreach($list["results"] as $temp) {
             $m = new Movie($temp["title"], $temp["id"], $temp["poster_path"], $temp["overview"], $temp["popularity"],
-                $temp["vote_count"], $temp["vote_average"], $temp["release_date"], $temp["genre_ids"]);
+                $temp["vote_count"], $temp["vote_average"], $temp["release_date"], $temp["genre_ids"],
+                'http://image.tmdb.org/t/p/w500');
             array_push($movies_array, $m);
         }
         return $movies_array;
