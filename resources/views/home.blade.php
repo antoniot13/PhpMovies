@@ -56,16 +56,14 @@
                 </div>
 
                 <div class="panel-body">
-                    <?php var_dump($movies[0]->base_url ) ?>
-                    <?php var_dump($movies[0]->image ) ?>
                     <div class="row list-group" id="products">
-                    @for ($i = 0; $i < 20; $i++)
+                    @foreach($movies as $movie)
                         <div class="col-md-3 item">
                             <div class="thumbnail">
-                                <img class="group list-group-image" src="http://placehold.it/320x200" alt="">
+                                <img class="group list-group-image" src="{{$movie->base_url . $movie->image}}" alt="">
                                 <div class="caption">
-                                    <h4 class="group inner list-group-item-heading"><a href="#"> Movie {{$i}} </a></h4>
-                                    <p class="group inner list-group-item-text">This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h4 class="group inner list-group-item-heading"><a href="#"> {{ $movie->title }} </a></h4>
+                                    <p class="group inner list-group-item-text">{{$movie->overview}}</p>
                                 </div>
                                 <div class="ratings text-right">
                                     <span class="glyphicon glyphicon-star"></span>
@@ -76,7 +74,7 @@
                                 </div>
                             </div>
                         </div>
-                    @endfor
+                    @endforeach
                     </div>
                 </div>
             </div>
