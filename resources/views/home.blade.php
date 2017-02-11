@@ -63,7 +63,7 @@
                                 <img class="group list-group-image" src="{{$movie->base_url . $movie->image}}" alt="">
                                 <div class="caption">
                                     <h4 class="group inner list-group-item-heading"><a href="#"> {{ $movie->title }} </a></h4>
-                                    <p class="group inner list-group-item-text">{{$movie->overview}}</p>
+                                    <p class="group inner list-group-item-text">{{ substr($movie->overview,0,70) . "..."}}</p>
                                 </div>
                                 <div class="ratings text-right">
                                     <span class="glyphicon glyphicon-star"></span>
