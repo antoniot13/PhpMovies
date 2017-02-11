@@ -56,6 +56,8 @@
                 </div>
 
                 <div class="panel-body">
+
+                    {{$movies}}
                     <div class="row list-group" id="products">
                     @for ($i = 0; $i < 20; $i++)
                         <div class="col-md-3 item">
