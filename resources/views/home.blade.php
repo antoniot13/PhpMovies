@@ -34,9 +34,9 @@
                             <strong>Display</strong>
                             <div class="btn-group">
                                 <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
-                                    </span>List</a>
+                                    </span>&nbsp;List</a>
                                 <a href="#" id="grid" class="btn btn-default btn-sm">
-                                    <span class="glyphicon glyphicon-th"></span>Grid</a>
+                                    <span class="glyphicon glyphicon-th"></span> Grid</a>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -72,7 +72,7 @@
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
-                                    <span class  ="glyphicon glyphicon-star-empty"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
                                 </div>
                             </div>
                         </div>
