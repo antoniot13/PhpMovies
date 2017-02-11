@@ -11,7 +11,8 @@ class TMDBImpl {
 
         $tmdb = new TMDb($apiKey);
 
-        $list = $tmdb->searchMovie('The Godfather');
+        //$list = $tmdb->searchMovie('The Godfather');
+        $list = $tmdb->getPopularMovies();
 
         $movies_array = array();
 
