@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 class Movie {
     public $title;
     public $id;
@@ -22,5 +24,9 @@ class Movie {
         $this->vote_average = $_vote_average;
         $this->release_date = $_release_date;
         $this->genre_array = $_genre_array;
+    }
+
+    public function getTitle() {
+        return $this->title;
     }
 }

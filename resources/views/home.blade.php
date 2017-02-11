@@ -61,8 +61,8 @@
                             <div class="thumbnail">
                                 <img src="http://placehold.it/320x200" alt="">
                                 <div class="caption">
-                                    <h4><a href="#"> Movie {{$i}} </a></h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h4><a href="#"> Movie {{$i}}</a></h4>
+                                    <p>{{ $movies }} This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
                                 <div class="ratings text-right">
                                     <span class="glyphicon glyphicon-star"></span>
