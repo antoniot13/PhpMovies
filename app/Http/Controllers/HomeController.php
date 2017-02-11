@@ -24,8 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-       // $movies = Movie::orderBy('genre','comedy')->paginate(12);
 
-        return view('home');//->withMovies($movies);
+        return view('home');
     }
 }

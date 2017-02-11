@@ -56,13 +56,14 @@
                 </div>
 
                 <div class="panel-body">
+                    <div class="row list-group" id="products">
                     @for ($i = 0; $i < 20; $i++)
-                        <div id="vlado" class="col-md-3">
+                        <div class="col-md-3 item">
                             <div class="thumbnail">
-                                <img src="http://placehold.it/320x200" alt="">
+                                <img class="group list-group-image" src="http://placehold.it/320x200" alt="">
                                 <div class="caption">
-                                    <h4><a href="#"> Movie {{$i}} </a></h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h4 class="group inner list-group-item-heading"><a href="#"> Movie {{$i}} </a></h4>
+                                    <p class="group inner list-group-item-text">This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
                                 <div class="ratings text-right">
                                     <span class="glyphicon glyphicon-star"></span>
@@ -74,6 +75,7 @@
                             </div>
                         </div>
                     @endfor
+                    </div>
                 </div>
             </div>
         </div>
