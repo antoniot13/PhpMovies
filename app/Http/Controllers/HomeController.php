@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Movie;
+use app\TMDBImpl;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -26,5 +27,8 @@ class HomeController extends Controller
     {
 
         return view('home');
+       // $movies = Movie::orderBy('genre','comedy')->paginate(12);
+        #$movies = TMDBImpl::getMovies();
+        return view('home')->with('movies', 'balu');//->withMovies($movies);
     }
 }

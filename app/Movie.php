@@ -2,12 +2,6 @@
 
 namespace App;
 
-/**
- * Created by PhpStorm.
- * User: nemesis
- * Date: 09-Feb-17
- * Time: 21:01
- */
 class Movie {
     public $title;
     public $id;
@@ -20,16 +14,19 @@ class Movie {
     public $genre_array;
 
     public function __construct($_title, $_id, $_image, $_overview, $_popularity, $_vote_count, $_vote_average,
-        $_release_date, $_genre_array) {
-        $title = $_title;
-        $id = $_id;
-        $image = $_image;
-        $overview = $_overview;
-        $popularity = $_popularity;
-        $vote_count = $_vote_count;
-        $vote_average = $_vote_average;
-        $release_date = $_release_date;
-        $genre_array = $_genre_array;
+                                $_release_date, $_genre_array) {
+        $this->title = $_title;
+        $this->id = $_id;
+        $this->image = $_image;
+        $this->overview = $_overview;
+        $this->popularity = $_popularity;
+        $this->vote_count = $_vote_count;
+        $this->vote_average = $_vote_average;
+        $this->release_date = $_release_date;
+        $this->genre_array = $_genre_array;
     }
 
+    public function getTitle() {
+        return $this->title;
+    }
 }
