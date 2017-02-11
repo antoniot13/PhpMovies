@@ -18,7 +18,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-1">
                             <div class="dropdown">
                                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Genre:
                                     <span class="caret"></span></button>
@@ -30,7 +30,16 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-3 col-md-offset-5">
+                        <div class="col-md-3 col-md-offset-3">
+                            <strong>Display</strong>
+                            <div class="btn-group">
+                                <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+                                    </span>List</a>
+                                <a href="#" id="grid" class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-th"></span>Grid</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
                             <form id="form" name="form" method="get" action="http://www.imdb.com/find">
                                 <div class="input-group">
                                     <input type="text" name="q" id="q" class="form-control" placeholder="Search">
@@ -48,7 +57,7 @@
 
                 <div class="panel-body">
                     @for ($i = 0; $i < 20; $i++)
-                        <div class="col-md-3">
+                        <div id="vlado" class="col-md-3">
                             <div class="thumbnail">
                                 <img src="http://placehold.it/320x200" alt="">
                                 <div class="caption">

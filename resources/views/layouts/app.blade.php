@@ -10,6 +10,9 @@
 
     <title> PhpSeries </title>
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
@@ -21,10 +24,6 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
-
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <script>
         $(function(){
@@ -47,6 +46,10 @@
                     .append( "<a>" + (item.img?"<img class='imdbImage' src='imdbImage.php?url=" + item.img + "' />":"") + "<span class='imdbTitle'>" + item.label + "</span>" + (item.cast?"<br /><span class='imdbCast'>" + item.cast + "</span>":"") + "<div class='clear'></div></a>" )
                     .appendTo( ul );
             };
+
+            $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
+            $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
+
         });
     </script>
     <style type="text/css">
@@ -57,7 +60,7 @@
         .ui-menu-item .imdbCast{
             font-size: 0.7em;
             font-style: italic;
-            line-height: 110%;
+            line-height: 100%;
             color: #666;
         }
         .ui-menu-item .imdbImage{
@@ -67,6 +70,7 @@
         .ui-menu-item .clear{
             clear: both;
         }
+
     </style>
 
 </head>
