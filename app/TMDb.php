@@ -1,16 +1,8 @@
 <?php
-/**
- * TMDb PHP API class - API 'themoviedb.org'
- * API Documentation: http://help.themoviedb.org/kb/api/
- * Documentation and usage in README file
- *
- * @author Jonas De Smet - Glamorous
- * @since 09.11.2009
- * @date 16.11.2012
- * @copyright Jonas De Smet - Glamorous
- * @version 1.5.1
- * @license BSD http://www.opensource.org/licenses/bsd-license.php
- */
+
+
+namespace app;
+
 
 class TMDb
 {
@@ -945,12 +937,4 @@ class TMDb
         return $return;
     }
 }
-
-/**
- * TMDb Exception class
- *
- * @author Jonas De Smet - Glamorous
- */
-class TMDbException extends Exception{}
-
 ?>

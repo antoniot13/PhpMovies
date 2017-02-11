@@ -4,6 +4,7 @@ namespace app;
 
 include 'TMDb.php';
 include 'Movie.php';
+include 'TMDbException.php';
 
 class TMDBImpl {
     public static function getMovies() {
