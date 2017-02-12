@@ -71,4 +71,34 @@ class DBImpl {
         mysqli_close($link);
         return $res;
     }
+
+    public static function insertIntoUserMovies($userId, $movieId) {
+        $link = mysqli_connect('127.0.0.1', 'test', 'test_1234', 'phpseries');
+        if (!$link) {
+            mysqli_close($link);
+            die('Could not connect: ' . mysql_error());
+        }
+        $link->query("insert into user_movies values (" . $userId . ", " . $movieId . ")");
+        return $link->affected_rows;
+    }
+
+    public static function insertIntoUserMoviesComments($userId, $movieId, $comment) {
+        $link = mysqli_connect('127.0.0.1', 'test', 'test_1234', 'phpseries');
+        if (!$link) {
+            mysqli_close($link);
+            die('Could not connect: ' . mysql_error());
+        }
+        $link->query("insert into user_movie_comments values (" . $userId . ", " . $movieId . ", '" . $comment . "')");
+        return $link->affected_rows;
+    }
+
+    public static function insertIntoRatings($userId, $movieId, $rating) {
+        $link = mysqli_connect('127.0.0.1', 'test', 'test_1234', 'phpseries');
+        if (!$link) {
+            mysqli_close($link);
+            die('Could not connect: ' . mysql_error());
+        }
+        $link->query("insert into user_movie_rating values (" . $userId . ", " . $movieId . ", " . $rating . ")");
+        return $link->affected_rows;
+    }
 }
