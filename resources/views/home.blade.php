@@ -58,7 +58,7 @@
                 <div class="panel-body">
                     <div class="row list-group" id="products">
                     @foreach($movies as $movie)
-                        <div class="col-md-3 item">
+                        <div class="col-md-3 item" style="height: 520px;">
                             <div class="thumbnail">
                                 <img class="group list-group-image" src="{{$movie->base_url . $movie->image}}" alt="">
                                 <div class="caption">
