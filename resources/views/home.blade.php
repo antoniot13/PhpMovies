@@ -35,7 +35,7 @@
                             <div class="btn-group">
                                 <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
                                     </span>&nbsp;List</a>
-                                <a href="#" id="grid" class="btn btn-default btn-sm">
+                                <a href="#" id="grid" class="btn btn-default btn-sm active">
                                     <span class="glyphicon glyphicon-th"></span> Grid</a>
                             </div>
                         </div>
@@ -58,14 +58,14 @@
                 <div class="panel-body">
                     <div class="row list-group" id="products">
                     @foreach($movies as $movie)
-                        <div class="col-md-3 item" style="height: 520px;">
-                            <div class="thumbnail">
+                        <div class="col-md-3 item">
+                            <div class="thumbnail" style="height: 550px;">
                                 <img class="group list-group-image" src="{{$movie->base_url . $movie->image}}" alt="">
                                 <div class="caption">
                                     <h4 class="group inner list-group-item-heading"><a href="#"> {{ $movie->title }} </a></h4>
                                     <p class="group inner list-group-item-text">{{ substr($movie->overview,0,70) . "..."}}</p>
                                 </div>
-                                <div class="ratings text-right">
+                                <div class="ratings text-right" style="bottom: 35px; right: 25px; position: absolute">
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>

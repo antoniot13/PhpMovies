@@ -47,7 +47,10 @@
                     .appendTo( ul );
             };
 
-            $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
+            $('#list').click(function(event){event.preventDefault();
+                $('#products .item').addClass('list-group-item');
+                $('#grid').removeClass('active');
+            });
             $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
 
         });
@@ -75,8 +78,9 @@
         {
             float: none;
             width: 100%;
+            height: 430px !important;
             background-color: #fff;
-            margin-bottom: 10px;
+
         }
         .item.list-group-item .list-group-image
         {
@@ -86,7 +90,7 @@
         {
             margin-bottom: 0px;
             padding: 0px;
-            padding-bottom: 118px;
+            padding-bottom: 100px;
             -webkit-border-radius: 0px;
             -moz-border-radius: 0px;
             border-radius: 0px;
@@ -106,6 +110,7 @@
         .item.list-group-item img
         {
             float: left;
+            height: 400px;
         }
         .item.list-group-item:after
         {
