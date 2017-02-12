@@ -66,5 +66,47 @@
 
 
         </div>
+
+        <div class="row">
+            <div class="col-md-7">
+                <div class="page-header">
+                    <h1><small class="pull-right">{{count($comments)}}</small> Comments </h1>
+                </div>
+
+                <div class="comments-list">
+                    @foreach($comments as $comment)
+                    <div class="media">
+                        <p class="pull-right"><small></small></p>
+                        <a class="media-left" href="#">
+
+                        </a>
+                        <div class="media-body">
+
+                            <h4 class="media-heading user_name"></h4>
+                           {{$comment}}
+
+                            <p><small><a href="">Like</a> - <a href="">Share</a></small></p>
+                        </div>
+                    </div>
+                        <hr>
+                    @endforeach
+                    
+
+                        <div class="well">
+                            <h4>Leave a Comment:</h4>
+                            <form role="form">
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
     </div>
 @endsection

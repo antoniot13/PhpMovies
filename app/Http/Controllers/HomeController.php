@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DBImpl;
 use App\Movie;
 use App\TMDBImpl;
 use App\TMDb;
@@ -44,10 +45,10 @@ class HomeController extends Controller
             {
                 $singlemovie=$movie;
             }
-
         }
 
+        $comments=DBImpl::getCommentsForMovie($id);
 
-        return view('singlemovie',['singlemovie'=> $singlemovie]);
+        return view('singlemovie',['singlemovie'=> $singlemovie], ['comments'=>$comments]);
     }
 }
