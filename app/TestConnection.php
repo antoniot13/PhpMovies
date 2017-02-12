@@ -14,3 +14,5 @@ foreach (DBImpl::getCommentsForMovie('1') as $UserId => $Comment) {
 
 echo DBImpl::getUserById('1') . "<br />";
 
+echo DBImpl::getMoviesWatchedByUser('1')[0];
+

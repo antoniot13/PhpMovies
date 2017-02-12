@@ -54,4 +54,21 @@ class DBImpl {
         mysqli_close($link);
         return $res;
     }
+
+    public static function getMoviesWatchedByUser($userId) {
+        $link = mysqli_connect('127.0.0.1', 'test', 'test_1234', 'phpseries');
+        if (!$link) {
+            mysqli_close($link);
+            die('Could not connect: ' . mysql_error());
+        }
+        $res = array();
+        if ($result = $link->query("select MovieId from user_movies where UserId = " . $userId)->fetch_all()) {
+
+            foreach($result as $temp) {
+                array_push($res, $temp[0]);
+            }
+        }
+        mysqli_close($link);
+        return $res;
+    }
 }
