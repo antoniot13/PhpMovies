@@ -7,23 +7,22 @@
         <div class="row ">
             <div class="col-md-11">
 
-                <h4 style="border-bottom:2px solid black; display:inline ">Komedija</h4>
+                <h4 style="border-bottom:2px solid black; display:inline ">{{$singlemovie->id}}</h4>
 
             </div>
         </div>
         <br>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
 
-                <img src="http://placehold.it/300x350" alt="">
+                <img style="height:400px;width:400px" src="{{$singlemovie->base_url . $singlemovie->image}}" alt="">
             </div>
             <div class="col-md-7 col-md-offset-1">
-                <p>Focus is a 2015 American romantic crime comedy-drama film
-                    written and directed by Glenn Ficarra and John Requa, starring Will Smith, Margot Robbie, and Rodrigo Santoro.
-                    The film was released on February 27, 2015 and received mixed reviews
-                    from critics but was a success at the box office, grossing a total of
-                    $159 million off its $50 million dollar budget</p>
+                <h3>{{$singlemovie->title}}</h3>
+                <br>
+                <p>{{$singlemovie->overview}}</p>
                 <p>Stars:Pedja Medja</p>
+
                 <hr>
 
                 <div class="row">
