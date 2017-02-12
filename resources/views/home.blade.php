@@ -66,11 +66,12 @@
                                     <p class="group inner list-group-item-text">{{ substr($movie->overview,0,70) . "..."}}</p>
                                 </div>
                                 <div class="ratings text-right" style="bottom: 35px; right: 25px; position: absolute">
+                                    @for ($i = 0; $i < floor($movie->vote_average); $i++)
                                     <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
+                                    @endfor
+                                    @for ($i = floor($movie->vote_average); $i < 10; $i++)
                                     <span class="glyphicon glyphicon-star-empty"></span>
+                                    @endfor
                                 </div>
                             </div>
                         </div>
