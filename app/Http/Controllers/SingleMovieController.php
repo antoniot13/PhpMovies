@@ -11,8 +11,6 @@ class SingleMovieController extends Controller
 
     public function index()
     {
-
-
         return view('singlemovie');
     }
 }

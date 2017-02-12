@@ -40,7 +40,7 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <form id="form" name="form" method="get" action="http://www.imdb.com/find">
+                            <form id="form" name="form" method="get" action="/search">
                                 <div class="input-group">
                                     <input type="text" name="q" id="q" class="form-control" placeholder="Search">
                                     <input name="s" value="all" type="hidden" />

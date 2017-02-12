@@ -15,5 +15,5 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/home', 'HomeController@index');
 Auth::routes();
-Route::get('/movie','SingleMovieController@index');
+Route::get('/search','HomeController@search');
 Route::get('{id}', 'HomeController@show');

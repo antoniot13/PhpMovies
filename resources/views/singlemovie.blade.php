@@ -7,7 +7,16 @@
         <div class="row ">
             <div class="col-md-11">
 
-                <h4 style="border-bottom:2px solid black; display:inline ">{{$singlemovie->id}}</h4>
+                <h4 style="display:inline ">
+
+                    @foreach ($singlemovie[0]->genre_array as $gen)
+                        @foreach($gen as $gen1)
+                            @if(is_string($gen1))
+                            {{ $gen1 }} </br>
+                            @endif
+                        @endforeach
+                    @endforeach
+                </h4>
 
             </div>
         </div>
@@ -15,13 +24,12 @@
         <div class="row">
             <div class="col-md-4">
 
-                <img style="height:400px;width:400px" src="{{$singlemovie->base_url . $singlemovie->image}}" alt="">
+                <img style="height:400px;width:400px" src="{{$singlemovie[0]->base_url . $singlemovie[0]->image}}" alt="">
             </div>
             <div class="col-md-7 col-md-offset-1">
-                <h3>{{$singlemovie->title}}</h3>
+                <h3>{{$singlemovie[0]->title}}</h3>
                 <br>
-                <p>{{$singlemovie->overview}}</p>
-                <p>Stars:Pedja Medja</p>
+                <p>{{$singlemovie[0]->overview}}</p>
 
                 <hr>
 

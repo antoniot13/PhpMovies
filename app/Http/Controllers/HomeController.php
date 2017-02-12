@@ -36,18 +36,15 @@ class HomeController extends Controller
 
     public function show($id)
     {
-        $movies=TMDBImpl::getMovies();
-        $singlemovie=[];
-        foreach ($movies as $movie)
-        {
-            if($movie->id==$id)
-            {
-                $singlemovie=$movie;
-            }
-
-        }
-
-
+        $singlemovie = TMDBImpl::getMovie($id);
+        //return $singlemovie;
+        return view('singlemovie',['singlemovie'=> $singlemovie]);
+    }
+    public function search()
+    {
+        //return $_GET["q"];
+        $singlemovie = TMDBImpl::getMovie($_GET["q"]);
+        //return $singlemovie;
         return view('singlemovie',['singlemovie'=> $singlemovie]);
     }
 }
