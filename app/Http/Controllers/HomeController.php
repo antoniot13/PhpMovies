@@ -8,6 +8,7 @@ use App\TMDBImpl;
 use App\TMDb;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -49,5 +50,19 @@ class HomeController extends Controller
         //return $singlemovie;
 
         return view('singlemovie',['singlemovie'=> $singlemovie]);
+    }
+
+    public function storeComment(Request $request,$id)
+
+    {
+        $data['id']=$id;
+        $user= Auth::user()['id'];
+        $comment=$request->comment;
+
+        DBImpl::insertIntoUserMoviesComments($user,$id,$comment);
+        return back();
+
+
+
     }
 }

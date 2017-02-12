@@ -12,7 +12,7 @@
                     @foreach ($singlemovie[0]->genre_array as $gen)
                         @foreach($gen as $gen1)
                             @if(is_string($gen1))
-                            {{ $gen1 }} </br>
+                            <span style="border-right:1px solid black">{{ $gen1 }} &nbsp</span>
                             @endif
                         @endforeach
                     @endforeach
@@ -98,15 +98,21 @@
                     </div>
                         <hr>
                     @endforeach
-                    
+
+
+
 
                         <div class="well">
                             <h4>Leave a Comment:</h4>
-                            <form role="form">
+                            <form  method="POST" action="{{$singlemovie[0]->id}}">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                                 <div class="form-group">
-                                    <textarea class="form-control" rows="3"></textarea>
+                                    <textarea name="comment" class="form-control" rows="3" ></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
                             </form>
                         </div>
 

@@ -17,3 +17,4 @@ Route::get('/home', 'HomeController@index');
 Auth::routes();
 Route::get('/search','HomeController@search');
 Route::get('{id}', 'HomeController@show');
+Route::post('{id}','HomeController@storeComment');
