@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45bb7b57-4e15-4869-891b-4d85a7594c8d" name="Default" comment="ui fixes">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/PhpSeries.iml" afterPath="$PROJECT_DIR$/.idea/PhpSeries.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/singlemovie.blade.php" afterPath="$PROJECT_DIR$/resources/views/singlemovie.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,18 +39,18 @@
       <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
+            <state relative-caret-position="131">
               <caret line="59" column="24" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+            <state relative-caret-position="136">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="e#40#55#0#PHP" expanded="true" />
               </folding>
@@ -60,14 +58,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="singlemovie.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="singlemovie.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/singlemovie.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="106" column="74" selection-start-line="106" selection-start-column="74" selection-end-line="106" selection-end-column="74" />
+            <state relative-caret-position="312">
+              <caret line="98" column="28" selection-start-line="98" selection-start-column="28" selection-end-line="98" selection-end-column="28" />
               <folding>
                 <element signature="e#159#182#0#HTML" expanded="true" />
                 <element signature="e#385#421#0#HTML" expanded="true" />
+                <element signature="e#3504#3526#0#HTML" expanded="true" />
+                <marker date="1486943208628" expanded="true" signature="2894:4504" ph="..." />
+                <marker date="1486943208628" expanded="true" signature="2986:3679" ph="..." />
+                <marker date="1486943208628" expanded="true" signature="3108:3138" ph="..." />
+                <marker date="1486943208628" expanded="true" signature="3187:3652" ph="..." />
+                <marker date="1486943208628" expanded="true" signature="3787:4481" ph="..." />
+                <marker date="1486943208628" expanded="true" signature="3924:4450" ph="..." />
+                <marker date="1486943208628" expanded="true" signature="4077:4220" ph="..." />
+                <marker date="1486943208628" expanded="true" signature="4277:4414" ph="..." />
               </folding>
             </state>
           </provider>
@@ -123,8 +130,8 @@
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/app/TMDBImpl.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/singlemovie.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/singlemovie.blade.php" />
       </list>
     </option>
   </component>
@@ -474,7 +481,7 @@
       <workItem from="1486833006162" duration="25000" />
       <workItem from="1486833031738" duration="3850000" />
       <workItem from="1486837031897" duration="22589000" />
-      <workItem from="1486939069612" duration="686000" />
+      <workItem from="1486939069612" duration="4273000" />
     </task>
     <task id="LOCAL-00001" summary="mm">
       <created>1486832822081</created>
@@ -529,7 +536,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27366000" />
+    <option name="totallyTimeSpent" value="30953000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
@@ -612,6 +619,15 @@
           <folding>
             <element signature="e#159#182#0#HTML" expanded="true" />
             <element signature="e#385#421#0#HTML" expanded="true" />
+            <element signature="e#3504#3526#0#HTML" expanded="true" />
+            <marker date="1486943208628" expanded="true" signature="2894:4504" ph="..." />
+            <marker date="1486943208628" expanded="true" signature="2986:3679" ph="..." />
+            <marker date="1486943208628" expanded="true" signature="3108:3138" ph="..." />
+            <marker date="1486943208628" expanded="true" signature="3187:3652" ph="..." />
+            <marker date="1486943208628" expanded="true" signature="3787:4481" ph="..." />
+            <marker date="1486943208628" expanded="true" signature="3924:4450" ph="..." />
+            <marker date="1486943208628" expanded="true" signature="4077:4220" ph="..." />
+            <marker date="1486943208628" expanded="true" signature="4277:4414" ph="..." />
           </folding>
         </state>
       </provider>
@@ -852,20 +868,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
+        <state relative-caret-position="131">
           <caret line="59" column="24" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/singlemovie.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="106" column="74" selection-start-line="106" selection-start-column="74" selection-end-line="106" selection-end-column="74" />
-          <folding>
-            <element signature="e#159#182#0#HTML" expanded="true" />
-            <element signature="e#385#421#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -881,10 +886,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        <state relative-caret-position="136">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
             <element signature="e#40#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/singlemovie.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="98" column="28" selection-start-line="98" selection-start-column="28" selection-end-line="98" selection-end-column="28" />
+          <folding>
+            <element signature="e#159#182#0#HTML" expanded="true" />
+            <element signature="e#385#421#0#HTML" expanded="true" />
+            <element signature="e#3504#3526#0#HTML" expanded="true" />
+            <marker date="1486943208628" expanded="true" signature="2894:4504" ph="..." />
+            <marker date="1486943208628" expanded="true" signature="2986:3679" ph="..." />
+            <marker date="1486943208628" expanded="true" signature="3108:3138" ph="..." />
+            <marker date="1486943208628" expanded="true" signature="3187:3652" ph="..." />
+            <marker date="1486943208628" expanded="true" signature="3787:4481" ph="..." />
+            <marker date="1486943208628" expanded="true" signature="3924:4450" ph="..." />
+            <marker date="1486943208628" expanded="true" signature="4077:4220" ph="..." />
+            <marker date="1486943208628" expanded="true" signature="4277:4414" ph="..." />
           </folding>
         </state>
       </provider>
