@@ -39,15 +39,15 @@ class HomeController extends Controller
     {
         $singlemovie = TMDBImpl::getMovie($id);
         //return $singlemovie;
-        return view('singlemovie',['singlemovie'=> $singlemovie]);
+        $comments=DBImpl::getCommentsForMovie($id);
+        return view('singlemovie',['singlemovie'=> $singlemovie], ['comments'=>$comments]);
     }
     public function search()
     {
         //return $_GET["q"];
         $singlemovie = TMDBImpl::getMovie($_GET["q"]);
         //return $singlemovie;
-        $comments=DBImpl::getCommentsForMovie($id);
 
-        return view('singlemovie',['singlemovie'=> $singlemovie], ['comments'=>$comments]);
+        return view('singlemovie',['singlemovie'=> $singlemovie]);
     }
 }
