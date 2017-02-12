@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DBImpl;
 use App\Movie;
 use App\TMDBImpl;
 use App\TMDb;
@@ -45,6 +46,8 @@ class HomeController extends Controller
         //return $_GET["q"];
         $singlemovie = TMDBImpl::getMovie($_GET["q"]);
         //return $singlemovie;
-        return view('singlemovie',['singlemovie'=> $singlemovie]);
+        $comments=DBImpl::getCommentsForMovie($id);
+
+        return view('singlemovie',['singlemovie'=> $singlemovie], ['comments'=>$comments]);
     }
 }
