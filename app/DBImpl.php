@@ -38,6 +38,21 @@ class DBImpl {
         return $res;
     }
 
+    public static function getPictureByUser($id) {
+
+        $link = mysqli_connect('127.0.0.1', 'test', 'test_1234', 'phpseries');
+        if (!$link) {
+            mysqli_close($link);
+            die('Could not connect: ' . mysql_error());
+        }
+        $res = "";
+        if ($result = $link->query("select Picture from user_picture where UserId = " . $id)->fetch_all()) {
+            $res = $result[0][0];
+        }
+        mysqli_close($link);
+        return $res;
+    }
+
     public static function getCommentsForMovie($id) {
         $link = mysqli_connect('127.0.0.1', 'test', 'test_1234', 'phpseries');
         if (!$link) {
@@ -79,6 +94,16 @@ class DBImpl {
             die('Could not connect: ' . mysql_error());
         }
         $link->query("insert into user_movies values (" . $userId . ", " . $movieId . ")");
+        return $link->affected_rows;
+    }
+
+    public static function insertIntoUserPicture($userId, $picture) {
+        $link = mysqli_connect('127.0.0.1', 'test', 'test_1234', 'phpseries');
+        if (!$link) {
+            mysqli_close($link);
+            die('Could not connect: ' . mysql_error());
+        }
+        $link->query("insert into user_picture values (" . $userId . ", '" . $picture . "')");
         return $link->affected_rows;
     }
 
