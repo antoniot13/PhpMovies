@@ -4,6 +4,7 @@ namespace app;
 
 include 'TMDb.php';
 include 'Movie.php';
+include 'DBImpl.php';
 
 class TMDBImpl {
     public static function getMovies() {
@@ -16,8 +17,9 @@ class TMDBImpl {
         $movies_array = array();
 
         foreach($list["results"] as $temp) {
+            $ourRating = DBImpl::getRatingsForMovie($temp["id"]);
             $m = new Movie($temp["title"], $temp["id"], $temp["poster_path"], $temp["overview"], $temp["popularity"],
-                $temp["vote_count"], $temp["vote_average"], $temp["release_date"], $temp["genre_ids"],
+                $temp["vote_count"], ($temp["vote_average"] + $ourRating) / 2, $temp["release_date"], $temp["genre_ids"],
                 'http://image.tmdb.org/t/p/w500');
             array_push($movies_array, $m);
         }
