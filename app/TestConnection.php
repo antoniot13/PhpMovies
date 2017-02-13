@@ -7,8 +7,8 @@ include 'TMDBImpl.php';
 
 echo DBImpl::getRatingsForMovie('1') . "<br />";
 
-foreach (DBImpl::getCommentsForMovie('1') as $UserId => $Comment) {
-    echo $UserId . " : " . $Comment . "<br />";
+foreach (DBImpl::getCommentsForMovie('1') as $temp) {
+    //echo $UserId . " : " . $Comment . "<br />";
 }
 
 echo DBImpl::getUserById('1') . "<br />";
@@ -28,12 +28,10 @@ echo DBImpl::getPictureByUser(1);
 echo "<br /><br /><br /><br />";
 
 $mov = TMDBImpl::getMovies();
-var_dump($mov);
 
 echo "<br /><br /><br /><br />";
 usort($mov, "SortImpl::cmp_popularity");
 
-var_dump($mov);
 
 
 

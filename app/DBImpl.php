@@ -61,9 +61,9 @@ class DBImpl {
         }
         $res = array();
         if ($result = $link->query("select UserId, Comment from user_movie_comments where MovieId = '" . $id . "'")->fetch_all()) {
-
             foreach($result as $temp) {
-                $res[$temp[0]] = $temp[1];
+                var_dump($temp);
+                array_push($res, [$temp[0], $temp[1]]);
             }
         }
         mysqli_close($link);
