@@ -5,6 +5,7 @@ namespace app;
 include 'TMDb.php';
 include 'Movie.php';
 include 'DBImpl.php';
+include 'SortImpl.php';
 
 class TMDBImpl {
     public static function getMovies() {

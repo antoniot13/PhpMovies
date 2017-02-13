@@ -13,7 +13,8 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/home', 'HomeController@index');
+Route::post('/home', 'HomeController@index');
+Route::post('/', 'HomeController@indexSorted');
 Auth::routes();
 Route::get('/search','HomeController@search');
 Route::get('{id}', 'HomeController@show');

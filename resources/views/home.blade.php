@@ -8,12 +8,15 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-md-2">
-                            <select class="selectpicker col-md-12">
-                                <option selected disabled> Order by: </option>
-                                <option>Title A-Z</option>>
-                                <option>Most Popular</option>
-                                <option>Community Rating</option>
-                            </select>
+                            <form id="form1" action="/" onchange="$('#form1').submit();" method="post">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <select name="order" class="selectpicker col-md-12">
+                                    <option selected disabled> Order by: </option>
+                                    <option value="name">Title A-Z</option>>
+                                    <option value="cmp_popularity"> Most Popular</option>
+                                    <option value="rating">Community Rating</option>
+                                </select>
+                            </form>
                         </div>
                         <div class="col-md-2">
                             <select class="selectpicker col-md-12">

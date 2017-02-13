@@ -31,10 +31,20 @@ class HomeController extends Controller
      */
     public function index()
     {
+
        $movies = TMDBImpl::getMovies();
+
+
+       //usort($movies, "SortImpl::cmp_popularity");
        //$movies[0]
        return view('home', ['movies' => $movies]);
         //return view('home')->with('movies', 'balu');//->withMovies($movies);
+    }
+    public function indexSorted(){
+        $genre = $_POST["order"];
+        $movies = TMDBImpl::getMovies();
+        usort($movies, "SortImpl::" . $genre);
+        return view('home', ['movies' => $movies]);
     }
 
     public function show($id)
