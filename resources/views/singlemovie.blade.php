@@ -49,30 +49,29 @@
                         @else
                             <h4>Watched :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" value=""></h4>
                         @endif
-
                     </div>
                 </form>
 
                 <br>
-                <div class="col-md-2">
-                    <div class="dropdown ">
-                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Rate:
-                            <span class="caret"></span></button>
-                        <ul class="dropdown-menu ">
-                            <li><a href="1">1</a></li>
-                            <li><a href="2">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">6</a></li>
-                            <li><a href="#">7</a></li>
-                            <li><a href="#">8</a></li>
-                            <li><a href="#">9</a></li>
-                            <li><a href="#">10</a></li>
-                        </ul>
-                    </div>
+                <div class="col-md-7">
+                    <form method="post" action="/rate/{{$singlemovie[0]->id}}">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <select name="rating" class="selectpicker col-md-3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                        <button class="btn btn-default" type="submit">Rate this movie!</button>
+                    </form>
                 </div>
-                <button class="btn btn-default">Rate this movie!</button>
+
             </div>
         </div>
         <div class="row">

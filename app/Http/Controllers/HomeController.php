@@ -88,4 +88,12 @@ class HomeController extends Controller
         DBImpl::insertIntoUserMovies($user, $id);
         return back();
     }
+    public function storeRating($id){
+        $rate = $_POST["rating"];
+        $data['id']=$id;
+        $user= Auth::user()['id'];
+        //return $user;
+        DBImpl::insertIntoRatings($user, $id, $rate);
+        return back();
+    }
 }
