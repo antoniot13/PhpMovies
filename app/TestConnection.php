@@ -32,7 +32,9 @@ $mov = TMDBImpl::getMovies();
 echo "<br /><br /><br /><br />";
 usort($mov, "SortImpl::cmp_popularity");
 
-
+$comm = DBImpl::getCommentsForMovie(328111);
+var_dump($comm);
+echo $comm[0][1];
 
 
 
