@@ -81,6 +81,7 @@
                     <h1><small class="pull-right">{{count($comments)}}</small> Comments </h1>
                 </div>
 
+
                 <div class="comments-list">
                     @foreach($comments as $comment)
                     <div class="media">
@@ -89,11 +90,13 @@
 
                         </a>
                         <div class="media-body">
-
-                            <h4 class="media-heading user_name"></h4>
+                            <?php
+                            $key = array_search($comment, $comments);
+                            $user=\app\DBImpl::getUserById($key)
+                            ?>
+                                <span class="glyphicon glyphicon-user"></span>
+                                <h4 style="display:inline" class="media-heading user_name">{{$user}}</h4> <br><br>
                            {{$comment}}
-
-                            <p><small><a href="">Like</a> - <a href="">Share</a></small></p>
                         </div>
                     </div>
                         <hr>

@@ -42,6 +42,7 @@ class HomeController extends Controller
         $singlemovie = TMDBImpl::getMovie($id);
         //return $singlemovie;
         $comments=DBImpl::getCommentsForMovie($id);
+
         return view('singlemovie',['singlemovie'=> $singlemovie], ['comments'=>$comments]);
     }
     public function search()
