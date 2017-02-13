@@ -2,9 +2,8 @@
 
 namespace app;
 
-include 'TMDb.php';
-include 'Movie.php';
-include 'DBImpl.php';
+include 'SortImpl.php';
+include 'TMDBImpl.php';
 
 echo DBImpl::getRatingsForMovie('1') . "<br />";
 
@@ -25,5 +24,17 @@ echo DBImpl::getMoviesWatchedByUser('1')[0] . "<br />";
 echo DBImpl::insertIntoUserPicture(1, "picture1") . "<br />";
 
 echo DBImpl::getPictureByUser(1);
+
+echo "<br /><br /><br /><br />";
+
+$mov = TMDBImpl::getMovies();
+var_dump($mov);
+
+echo "<br /><br /><br /><br />";
+usort($mov, "SortImpl::cmp_popularity");
+
+var_dump($mov);
+
+
 
 
