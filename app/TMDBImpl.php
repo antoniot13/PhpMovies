@@ -36,10 +36,15 @@ class TMDBImpl {
         $temp = $tmdb->getMovie($id);
         $movies_array = array();
 
+        $ourRating = DBImpl::getRatingsForMovie($temp["id"]);
+        $rating = $temp["vote_average"];
+        if ($ourRating != 0) {
+            $rating = ($ourRating + $rating) / 2;
+        }
         //return $temp["genres"];
 
             $m = new Movie($temp["title"], $temp["id"], $temp["poster_path"], $temp["overview"], $temp["popularity"],
-                $temp["vote_count"], $temp["vote_average"], $temp["release_date"],$temp["genres"],
+                $temp["vote_count"], $rating, $temp["release_date"],$temp["genres"],
                 'http://image.tmdb.org/t/p/w500');
         array_push($movies_array, $m);
 
