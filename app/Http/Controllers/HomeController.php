@@ -6,6 +6,7 @@ use App\DBImpl;
 use App\Movie;
 use App\TMDBImpl;
 use App\TMDb;
+use App\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -61,8 +62,9 @@ class HomeController extends Controller
 
         DBImpl::insertIntoUserMoviesComments($user,$id,$comment);
         return back();
-
-
-
+    }
+    public function profile(Request $request, $id) {
+        $data['user'] = User::find($id);
+        return view('profile', $data);
     }
 }
