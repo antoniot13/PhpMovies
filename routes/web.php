@@ -18,4 +18,6 @@ Auth::routes();
 Route::get('/search','HomeController@search');
 Route::get('{id}', 'HomeController@show');
 Route::post('{id}','HomeController@storeComment');
+Route::post('/watched/{id}','HomeController@storeWatched');
+//Route::post('/watched','HomeController@watched');
 Route::get('user/{id}','HomeController@profile')->where('id', '[0-9]+');

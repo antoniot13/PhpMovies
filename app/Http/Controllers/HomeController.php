@@ -42,8 +42,18 @@ class HomeController extends Controller
         $singlemovie = TMDBImpl::getMovie($id);
         //return $singlemovie;
         $comments=DBImpl::getCommentsForMovie($id);
+        $data['id']=$id;
+        $user= Auth::user()['id'];
+        $watched=DBImpl::getMoviesWatchedByUser($user);
+        $iswatched = false;
 
-        return view('singlemovie',['singlemovie'=> $singlemovie], ['comments'=>$comments]);
+        foreach ($watched as $movie) {
+            if($movie == $id){
+                $iswatched = true;
+            }
+        }
+        //return var_dump($iswatched);
+        return view('singlemovie',['singlemovie'=> $singlemovie], ['comments'=>$comments])->with('iswatched', $iswatched );
     }
     public function search()
     {
@@ -70,5 +80,12 @@ class HomeController extends Controller
     public function profile(Request $request, $id) {
         $data['user'] = User::find($id);
         return view('profile', $data);
+    }
+    public function storeWatched($id) {
+        $data['id']=$id;
+        $user= Auth::user()['id'];
+        //return $user;
+        DBImpl::insertIntoUserMovies($user, $id);
+        return back();
     }
 }

@@ -32,7 +32,6 @@
                 <p>{{$singlemovie[0]->overview}}</p>
 
                 <hr>
-
                 <div class="row">
                     <div class="col-md-2">
                         <span class="glyphicon glyphicon-star" style="color:yellow ;  font-size: 45px" ></span>
@@ -42,9 +41,18 @@
                 </div>
                 <hr>
 
-                <div class="checkbox">
-                    <h4>Watched :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" value=""></h4>
-                </div>
+                <form id="form" method="post" onchange="$('#form').submit();" action="/watched/{{ $singlemovie[0]->id }}">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <div class="checkbox">
+                        @if($iswatched)
+                            <h4>Watched :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" value="" checked></h4>
+                        @else
+                            <h4>Watched :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" value=""></h4>
+                        @endif
+
+                    </div>
+                </form>
+
                 <br>
                 <div class="col-md-2">
                     <div class="dropdown ">
@@ -65,16 +73,8 @@
                     </div>
                 </div>
                 <button class="btn btn-default">Rate this movie!</button>
-
-
-
             </div>
-
-
-
-
         </div>
-
         <div class="row">
             <div class="col-md-7">
                 <div class="page-header">
