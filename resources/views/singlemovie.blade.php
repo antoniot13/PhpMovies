@@ -56,7 +56,8 @@
                 <div class="col-md-7">
                     <form method="post" action="/rate/{{$singlemovie[0]->id}}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <select name="rating" class="selectpicker col-md-3">
+                        <select name="rating" class="selectpicker col-md-4">
+                            <option selected disabled>Rate: </option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
