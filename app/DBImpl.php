@@ -113,7 +113,7 @@ class DBImpl {
             mysqli_close($link);
             die('Could not connect: ' . mysql_error());
         }
-        $link->query("insert into user_movie_comments values (" . $userId . ", " . $movieId . ", '" . $comment . "')");
+        $link->query("insert into user_movie_comments values (" . $userId . ", " . $movieId . ", '" . $comment . "', 0)");
         return $link->affected_rows;
     }
 
