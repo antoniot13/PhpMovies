@@ -21,3 +21,9 @@ echo DBImpl::getMoviesWatchedByUser('1')[0] . "<br />";
 #echo "Affected rows: " . DBImpl::insertIntoUserMoviesComments(2, 10, "komOdPHP");
 
 #echo "Affected rows: " . DBImpl::insertIntoRatings(1, 9, 9);
+
+echo DBImpl::insertIntoUserPicture(1, "picture1") . "<br />";
+
+echo DBImpl::getPictureByUser(1);
+
+
