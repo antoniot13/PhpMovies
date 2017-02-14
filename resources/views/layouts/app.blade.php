@@ -151,7 +151,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/home') }}">
+                    <a class="navbar-brand" href="{{ url('/') }}">
                         PhpSeries
                     </a>
                 </div>
@@ -160,7 +160,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;@if (!Auth::guest())
-                            <li><a href="/mymovies">My movies</a></li>
+                            <li><a href="/user/movies">My movies</a></li>
                          @endif
                     </ul>
 

@@ -24,7 +24,6 @@ class HomeController extends Controller
 
     public function __construct()
     {
-        $test = new TMDBImpl();
        // $this->middleware('auth');
     }
 
@@ -35,10 +34,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-
        $movies = TMDBImpl::getMovies();
-
-
        //usort($movies, "SortImpl::cmp_popularity");
        //$movies[0]
        return view('home', ['movies' => $movies]);
@@ -69,22 +65,20 @@ class HomeController extends Controller
         //return var_dump($iswatched);
         return view('singlemovie',['singlemovie'=> $singlemovie], ['comments'=>$comments])->with('iswatched', $iswatched );
     }
-    public function search(Request $request)
+    public function search()
     {
-        $user = $request->user()->id;
-        $test;
-        $movie = new TMDBImpl();
-        $watched=$test->getMoviesWatchedByUser($user);
-        return $movie->getMovie($_GET["q"]);
-        //return $watched;
-        //return $_GET["q"];
-        //$singlemovie = TMDBImpl::getMovie($_GET["q"]);
-        //return $singlemovie;
-
-        $comments = $test->getCommentsForMovie(328111);;
-        return var_dump($comments);
-
-        return view('singlemovie',['singlemovie'=> $singlemovie], ['comments'=>$comments]);
+        $singlemovie = TMDBImpl::getMovie($_GET["q"]);
+        $comments=DBImpl::getCommentsForMovie($singlemovie[0]->id);
+        $user= Auth::user()['id'];
+        $watched=DBImpl::getMoviesWatchedByUser($user);
+        $iswatched = false;
+        foreach ($watched as $movie) {
+            if($movie == $singlemovie[0]->id){
+                $iswatched = true;
+            }
+        }
+        //return var_dump($iswatched);
+        return view('singlemovie',['singlemovie'=> $singlemovie], ['comments'=>$comments])->with('iswatched', $iswatched );
     }
 
     public function storeComment(Request $request,$id)
@@ -115,5 +109,10 @@ class HomeController extends Controller
         //return $user;
         DBImpl::insertIntoRatings($user, $id, $rate);
         return back();
+    }
+
+    public function usermovies(Request $request){
+        $user = $request->user()->id;
+        return $user;
     }
 }

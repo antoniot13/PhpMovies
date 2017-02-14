@@ -13,12 +13,11 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::post('/home', 'HomeController@index');
 Route::post('/', 'HomeController@indexSorted');
 Auth::routes();
 Route::get('/search','HomeController@search');
 Route::get('{id}', 'HomeController@show');
-Route::get('/mymovies', 'HomeController@mymovies');
+Route::get('/user/movies', 'HomeController@usermovies');
 Route::post('{id}','HomeController@storeComment');
 Route::post('/watched/{id}','HomeController@storeWatched');
 Route::post('/rate/{id}','HomeController@storeRating');
