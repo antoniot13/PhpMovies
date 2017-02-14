@@ -32,12 +32,13 @@
                 <p>{{$singlemovie[0]->overview}}</p>
 
                 <hr>
+
                 <div class="row">
                     <div class="col-md-2">
                         <span class="glyphicon glyphicon-star" style="color:yellow ;  font-size: 45px" ></span>
                     </div>
-                    <p> &nbsp;&nbsp;     7.0 / 10 </p>
-                    <p> of 380 ratings</p>
+                    <p> &nbsp;&nbsp;    {{$singlemovie[0]->vote_average}} / 10 </p>
+                    <p> of {{$singlemovie[0]->vote_count}} ratings</p>
                 </div>
                 <hr>
 
@@ -82,11 +83,11 @@
                 </div>
 
 
-                <div class="comments-list">
+
                     @foreach($comments as $comment)
                         <div class="container">
                             <div class="row">
-                                <div class="col-sm-5">
+                                <div class="col-sm-6">
                                 </div><!-- /col-sm-12 -->
                             </div><!-- /row -->
                             <div class="row">
@@ -117,7 +118,7 @@
                             </div>
                         </div>
                     @endforeach
-                    </div>
+
                         <div class="well">
                             <h4>Leave a Comment:</h4>
                             <form  method="POST" action="{{$singlemovie[0]->id}}">
