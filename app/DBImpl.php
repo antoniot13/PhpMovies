@@ -49,6 +49,8 @@ public static function getRatingsForMovie($id) {
         $res = "";
         if ($result = $link->query("select Picture from user_picture where UserId = '" . $id . "'")->fetch_all()) {
             $res = $result[0][0];
+        } else {
+            return "defaultLocationOfPicture";
         }
         mysqli_close($link);
         return $res;
@@ -63,7 +65,6 @@ public static function getRatingsForMovie($id) {
         $res = array();
         if ($result = $link->query("select UserId, Comment from user_movie_comments where MovieId = '" . $id . "'")->fetch_all()) {
             foreach($result as $temp) {
-                var_dump($temp);
                 array_push($res, [$temp[0], $temp[1]]);
             }
         }
