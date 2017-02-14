@@ -19,6 +19,7 @@ Route::get('/search','HomeController@search');
 Route::get('{id}', 'HomeController@show');
 Route::get('/user/movies', 'HomeController@usermovies');
 Route::post('{id}','HomeController@storeComment');
+Route::post('/user/{id}/uploadpicture','HomeController@storePicture');
 Route::post('/watched/{id}','HomeController@storeWatched');
 Route::post('/rate/{id}','HomeController@storeRating');
 //Route::post('/watched','HomeController@watched');

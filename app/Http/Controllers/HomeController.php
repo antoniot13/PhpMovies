@@ -7,6 +7,7 @@ use App\Movie;
 use App\TMDBImpl;
 use App\TMDb;
 use App\User;
+use Validator;
 
 
 use Illuminate\Http\Request;
@@ -111,8 +112,31 @@ class HomeController extends Controller
         return back();
     }
 
-    public function usermovies(Request $request){
-        $user = $request->user()->id;
-        return $user;
+    public function usermovies(){
+        $user= Auth::user()['id'];
+        $test = new TMDBImpl();
+        $watched=DBImpl::getMoviesWatchedByUser($user);
+        $movies = [];
+        foreach ($watched as $movie) {
+            $m = $test->getMovie($movie);
+            array_push($movies, $m);
+        }
+        //return $movies;
+        return view('usermovies',['movies'=> $movies]);
     }
+
+    public function storePicture(Request $request) {
+
+        $file = $request->file('userfile');
+        //return $file;
+        $destination_path = 'uploads/';
+        $filename = str_random(6).'_'.$file->getClientOriginalName();
+        //return $filename;
+        $file->move($destination_path, $filename);
+        $des = $destination_path . $filename;
+        DBImpl::insertIntoUserPicture($request->user()->id, $des);
+        return back();
+
+    }
+
 }

@@ -13,8 +13,8 @@
                         </div>
                     </div>
                     <div class="panel-body">
-
-                        <form method="post" action="#">
+                        <form method="post" action="{{Auth::user()->id}}/uploadpicture" enctype="multipart/form-data">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group">
                                 <label for="userfile">Profile picture</label>
                                 <input type="file" class="form-control" name="userfile">
