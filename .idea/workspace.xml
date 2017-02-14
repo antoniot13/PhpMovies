@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="45bb7b57-4e15-4869-891b-4d85a7594c8d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/usermovies.blade.php" afterPath="$PROJECT_DIR$/resources/views/usermovies.blade.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,20 +81,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="usermovies.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="usermovies.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/usermovies.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="17" column="133" lean-forward="false" selection-start-line="17" selection-start-column="133" selection-end-line="17" selection-end-column="133" />
+            <state relative-caret-position="65">
+              <caret line="17" column="102" lean-forward="false" selection-start-line="17" selection-start-column="102" selection-end-line="17" selection-end-column="102" />
               <folding>
                 <element signature="e#619#641#0#HTML" expanded="true" />
-                <element signature="e#1249#1302#0#HTML" expanded="true" />
+                <element signature="e#1250#1303#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="profile.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/profile.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
@@ -132,9 +131,14 @@
       <file leaf-file-name="singlemovie.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/singlemovie.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="93" column="36" lean-forward="false" selection-start-line="93" selection-start-column="36" selection-end-line="98" selection-end-column="61" />
-              <folding />
+            <state relative-caret-position="204">
+              <caret line="94" column="36" lean-forward="false" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
+              <folding>
+                <marker date="1487078456334" expanded="true" signature="5407:6101" ph="..." />
+                <marker date="1487078456334" expanded="true" signature="5544:6070" ph="..." />
+                <marker date="1487078456334" expanded="true" signature="5697:5840" ph="..." />
+                <marker date="1487078456334" expanded="true" signature="5897:6034" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -171,10 +175,10 @@
         <option value="$PROJECT_DIR$/app/DBImpl.php" />
         <option value="$PROJECT_DIR$/app/TMDBImpl.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/usermovies.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/profile.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/usermovies.blade.php" />
       </list>
     </option>
   </component>
@@ -683,7 +687,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52578000" />
+    <option name="totallyTimeSpent" value="52820000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -729,7 +733,8 @@
     <MESSAGE value="ui fixes" />
     <MESSAGE value="watched" />
     <MESSAGE value="picture upload" />
-    <option name="LAST_COMMIT_MESSAGE" value="picture upload" />
+    <MESSAGE value="ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="ui" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1081,9 +1086,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/singlemovie.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="93" column="36" lean-forward="false" selection-start-line="93" selection-start-column="36" selection-end-line="98" selection-end-column="61" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="94" column="36" lean-forward="false" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
+          <folding>
+            <marker date="1487078456334" expanded="true" signature="5407:6101" ph="..." />
+            <marker date="1487078456334" expanded="true" signature="5544:6070" ph="..." />
+            <marker date="1487078456334" expanded="true" signature="5697:5840" ph="..." />
+            <marker date="1487078456334" expanded="true" signature="5897:6034" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1091,14 +1101,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="316" column="36" lean-forward="false" selection-start-line="316" selection-start-column="20" selection-end-line="316" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/TMDBImpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1136,23 +1138,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/usermovies.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="17" column="133" lean-forward="false" selection-start-line="17" selection-start-column="133" selection-end-line="17" selection-end-column="133" />
-          <folding>
-            <element signature="e#619#641#0#HTML" expanded="true" />
-            <element signature="e#1249#1302#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/profile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="21" column="77" lean-forward="false" selection-start-line="21" selection-start-column="77" selection-end-line="21" selection-end-column="77" />
           <folding>
             <element signature="e#1343#1364#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/TMDBImpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/usermovies.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="17" column="102" lean-forward="false" selection-start-line="17" selection-start-column="102" selection-end-line="17" selection-end-column="102" />
+          <folding>
+            <element signature="e#619#641#0#HTML" expanded="true" />
+            <element signature="e#1250#1303#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
