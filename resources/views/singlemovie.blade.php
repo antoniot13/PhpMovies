@@ -71,9 +71,9 @@
                         @endif
                     </div>
                 </form>
-
                 <br>
                 <div class="col-md-7">
+                    @if($iswatched)
                     <form method="post" action="/rate/{{$singlemovie[0]->id}}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <select name="rating" class="selectpicker col-md-4">
@@ -91,6 +91,7 @@
                         </select>
                         <button class="btn btn-default" type="submit">Rate this movie!</button>
                     </form>
+                        @endif
                 </div>
 
             </div>
