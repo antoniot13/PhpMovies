@@ -126,8 +126,24 @@ class HomeController extends Controller
             $m = $test->getMovie($movie);
             array_push($movies, $m);
         }
-        //return $movies;
-        return view('usermovies',['movies'=> $movies]);
+        $suggest1=[];
+        $suggest2=[];
+
+        if(count($watched)>1)
+        {
+            $suggest1=TMDBImpl::getSimilarMovies($watched[0]);
+            $suggest1=array_slice($suggest1,0,2);
+            $suggest2=TMDBImpl::getSimilarMovies($watched[1]);
+            $suggest2=array_slice($suggest2,0,2);
+
+        }
+        else if(count($watched)!=0)
+        {
+            $suggest1=TMDBImpl::getSimilarMovies($watched[0]);
+            $suggest1=array_slice($suggest1,0,4);
+        }
+
+        return view('usermovies',['movies'=> $movies],['suggestions1'=>$suggest1])->with('suggestions2',$suggest2);
     }
 
     public function storePicture(Request $request) {

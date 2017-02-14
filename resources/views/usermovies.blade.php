@@ -34,5 +34,35 @@
                 </div>
             </div>
         </div>
+
+
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Suggestions for you:</h2>
+            </div>
+            @if(count($suggestions2)>0)
+            @foreach($suggestions1 as $movie)
+                <div class="col-md-3 text-center">
+                    <a href="/{{$movie->id}}"><img class="img-circle img-responsive img-center" style="height:200px; width:200px" src="{{$movie->base_url . $movie->image}}" alt=""></a>
+                    <h4 style="margin-right:50px" class=""><a href="/{{$movie->id}}"> {{ $movie->title }} </a></h4>
+                </div>
+            @endforeach
+                @foreach($suggestions2 as $movie)
+                    <div class="col-md-3 text-center">
+                        <a href="/{{$movie->id}}"><img class="img-circle img-responsive img-center" style="height:200px; width:200px" src="{{$movie->base_url . $movie->image}}" alt=""></a>
+                        <h4 style="margin-right:50px" class=""><a href="/{{$movie->id}}"> {{ $movie->title }} </a></h4>
+                    </div>
+                @endforeach
+            @else
+                @foreach($suggestions1 as $movie)
+                    <div class="col-md-3 text-center">
+                        <a href="/{{$movie->id}}"><img class="img-circle img-responsive img-center" style="height:200px; width:200px" src="{{$movie->base_url . $movie->image}}" alt=""></a>
+                        <h4 style="margin-right:50px" class=""><a href="/{{$movie->id}}"> {{ $movie->title }} </a></h4>
+                    </div>
+                @endforeach
+                @endif
+        </div>
+
     </div>
 @endsection
