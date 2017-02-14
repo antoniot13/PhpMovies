@@ -2,7 +2,6 @@
 
 namespace app;
 
-include 'SortImpl.php';
 include 'TMDBImpl.php';
 
 echo DBImpl::getNumberOfRatingsForMovie(328111);
@@ -29,14 +28,9 @@ echo DBImpl::getPictureByUser(1);
 
 echo "<br /><br /><br /><br />";
 
-$mov = TMDBImpl::getMovies();
+$sm = TMDBImpl::getSimilarMovies(328111);
 
-echo "<br /><br /><br /><br />";
-usort($mov, "SortImpl::cmp_popularity");
-
-$comm = DBImpl::getCommentsForMovie(328111);
-var_dump($comm);
-echo $comm[0][1];
+var_dump($sm);
 
 
 
