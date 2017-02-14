@@ -94,6 +94,8 @@ class HomeController extends Controller
     }
     public function profile(Request $request, $id) {
         $data['user'] = User::find($id);
+        $img = DBImpl::getPictureByUser($id);
+        //return $img;
         return view('profile', $data);
     }
     public function storeWatched($id) {
