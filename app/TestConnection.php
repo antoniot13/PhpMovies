@@ -5,6 +5,8 @@ namespace app;
 include 'SortImpl.php';
 include 'TMDBImpl.php';
 
+echo DBImpl::getNumberOfRatingsForMovie(328111);
+
 echo DBImpl::getRatingsForMovie('1') . "<br />";
 
 foreach (DBImpl::getCommentsForMovie('1') as $temp) {

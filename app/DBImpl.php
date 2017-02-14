@@ -24,6 +24,22 @@ public static function getRatingsForMovie($id) {
         return $res;
     }
 
+    public static function getNumberOfRatingsForMovie($id)
+    {
+        $link = mysqli_connect('127.0.0.1', 'test', 'test_1234', 'phpseries');
+        if (!$link) {
+            mysqli_close($link);
+            die('Could not connect: ' . mysql_error());
+        }
+        $res = 0;
+        if ($result = $link->query("select count(*) from user_movie_rating where MovieId = '" . $id . "'")->fetch_all()) {
+            $res = $result[0][0];
+        }
+        mysqli_close($link);
+        return $res;
+
+
+    }
     public static function getUserById($id) {
 
         $link = mysqli_connect('127.0.0.1', 'test', 'test_1234', 'phpseries');
