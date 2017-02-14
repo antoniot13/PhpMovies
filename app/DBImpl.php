@@ -5,10 +5,11 @@
  * Date: 11-Feb-17
  * Time: 19:54
  */
-namespace app;
+namespace App;
 
 class DBImpl {
-    public static function getRatingsForMovie($id) {
+
+public static function getRatingsForMovie($id) {
 
         $link = mysqli_connect('127.0.0.1', 'test', 'test_1234', 'phpseries');
         if (!$link) {

@@ -8,6 +8,7 @@ include 'DBImpl.php';
 include 'SortImpl.php';
 
 class TMDBImpl {
+
     public static function getMovies() {
         $apiKey = '45fb341c9e1114958b519e32556afaa1';
 

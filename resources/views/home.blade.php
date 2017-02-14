@@ -12,9 +12,9 @@
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <select name="order" class="selectpicker col-md-12">
                                     <option selected disabled> Order by: </option>
-                                    <option value="name">Title A-Z</option>>
+                                    <option value="cmp_release_date">Date</option>>
                                     <option value="cmp_popularity"> Most Popular</option>
-                                    <option value="rating">Community Rating</option>
+                                    <option value="cmp_vote_average">Community Rating</option>
                                 </select>
                             </form>
                         </div>

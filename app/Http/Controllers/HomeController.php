@@ -8,22 +8,26 @@ use App\TMDBImpl;
 use App\TMDb;
 use App\User;
 
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-   /*
+
     public function __construct()
     {
-        $this->middleware('auth');
+        $test = new TMDBImpl();
+       // $this->middleware('auth');
     }
-    */
+
     /**
      * Show the application dashboard.
      *
@@ -65,14 +69,20 @@ class HomeController extends Controller
         //return var_dump($iswatched);
         return view('singlemovie',['singlemovie'=> $singlemovie], ['comments'=>$comments])->with('iswatched', $iswatched );
     }
-    public function search()
+    public function search(Request $request)
     {
+        $user = $request->user()->id;
+        $test;
+        $movie = new TMDBImpl();
+        $watched=$test->getMoviesWatchedByUser($user);
+        return $movie->getMovie($_GET["q"]);
+        //return $watched;
         //return $_GET["q"];
-        $singlemovie = TMDBImpl::getMovie($_GET["q"]);
+        //$singlemovie = TMDBImpl::getMovie($_GET["q"]);
         //return $singlemovie;
 
-        $comments=DBImpl::getCommentsForMovie($singlemovie[0]->id);
-        //return var_dump($comments);
+        $comments = $test->getCommentsForMovie(328111);;
+        return var_dump($comments);
 
         return view('singlemovie',['singlemovie'=> $singlemovie], ['comments'=>$comments]);
     }

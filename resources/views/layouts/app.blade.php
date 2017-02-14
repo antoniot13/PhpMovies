@@ -160,7 +160,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;@if (!Auth::guest())
-                            <li><a href="#">My movies</a></li>
+                            <li><a href="/mymovies">My movies</a></li>
                          @endif
                     </ul>
 
