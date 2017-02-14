@@ -61,7 +61,7 @@
                                     <h4 class="group inner list-group-item-heading"><a href="{{$movie->id}}"> {{ $movie->title }} </a></h4>
                                     <p class="group inner list-group-item-text">{{ substr($movie->overview,0,70) . "..."}}</p>
                                 </div>
-                                <div class="ratings text-right" style="bottom: 35px; right: 25px; position: absolute">
+                                <div class="ratings text-right" style="bottom: 35px; right: 25px; position: absolute; color:gold; ">
                                     @for ($i = 0; $i < floor($movie->vote_average); $i++)
                                     <span class="glyphicon glyphicon-star"></span>
                                     @endfor
