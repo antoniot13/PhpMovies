@@ -119,7 +119,9 @@ class HomeController extends Controller
         $user= Auth::user()['id'];
         $test = new TMDBImpl();
         $watched=DBImpl::getMoviesWatchedByUser($user);
+        // $watched se id-ata, a $movie ti e sekoj id poedinecno
         $movies = [];
+
         foreach ($watched as $movie) {
             $m = $test->getMovie($movie);
             array_push($movies, $m);

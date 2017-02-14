@@ -19,12 +19,6 @@
                             </form>
                         </div>
                         <div class="col-md-2">
-                            <select class="selectpicker col-md-12">
-                                <option selected disabled> Genre: </option>
-                                <option value="all"> All genres</option>
-                                <option value="comedy">Comedy</option>
-                                <option value="horror">Horror</option>
-                            </select>
                         </div>
                         <div class="col-md-3 col-md-offset-2">
                             <strong>Display</strong>
