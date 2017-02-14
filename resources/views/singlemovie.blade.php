@@ -78,33 +78,43 @@
         <div class="row">
             <div class="col-md-7">
                 <div class="page-header">
-                    <h1><small class="pull-right">{{count($comments)}}</small> Comments </h1>
+                    <h4><span class="pull-right">{{count($comments)}}</span> Comments </h4>
                 </div>
 
 
                 <div class="comments-list">
                     @foreach($comments as $comment)
-                    <div class="media">
-                        <p class="pull-right"><small></small></p>
-                        <a class="media-left" href="#">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                </div><!-- /col-sm-12 -->
+                            </div><!-- /row -->
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    <div class="thumbnail">
+                                        <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                                    </div><!-- /thumbnail -->
+                                </div><!-- /col-sm-1 -->
+                                <div class="col-sm-5">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <?php
+                                            $user=\app\DBImpl::getUserById($comment[0])
+                                                ?>
+                                            <span class="glyphicon glyphicon-user"></span>
+                                            <strong>{{$user}}</strong> <span class="text-muted"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            {{$comment[1]}}
+                                        </div><!-- /panel-body -->
+                                    </div><!-- /panel panel-default -->
+                                </div><!-- /col-sm-5 -->
 
-                        </a>
-                        <div class="media-body">
-                            <?php
-                            $key = array_search($comment, $comments);
-                            $user=\app\DBImpl::getUserById($key)
-                            ?>
-                                <span class="glyphicon glyphicon-user"></span>
-                                <h4 style="display:inline" class="media-heading user_name">{{$user}}</h4> <br><br>
-                           {{$comment}}
+
+                            </div>
                         </div>
-                    </div>
-                        <hr>
                     @endforeach
-
-
-
-
+                    </div>
                         <div class="well">
                             <h4>Leave a Comment:</h4>
                             <form  method="POST" action="{{$singlemovie[0]->id}}">
@@ -118,11 +128,6 @@
                                 </div>
                             </form>
                         </div>
-
-
-
-
-            </div>
         </div>
     </div>
     </div>
