@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-md-4">
 
-                <img style="height:450px;width:400px" src="{{$singlemovie[0]->base_url . $singlemovie[0]->image}}" alt="">
+                <img class="thumbnail" style="height:450px;width:400px" src="{{$singlemovie[0]->base_url . $singlemovie[0]->image}}" alt="">
             </div>
             <div class="col-md-7 col-md-offset-1">
                 <h3>{{$singlemovie[0]->title}}</h3>
@@ -35,9 +35,9 @@
 
                 <div class="row">
                     <div class="col-md-6" style="border-right:1px solid lightgrey">
-                        <div class="alert alert-info text-center">IMDB rating</div>
+                        <div class="alert alert-info text-center"><b>IMDB rating</b></div>
                     <div class="col-md-3">
-                        <span class="glyphicon glyphicon-star" style="color:yellow ;  font-size: 45px" ></span>
+                        <span class="glyphicon glyphicon-star" style="color:gold ;  font-size: 45px" ></span>
                     </div>
                         <div class="col-md-5 col-md-offset-1">
                     <p> &nbsp;&nbsp;    {{$singlemovie[0]->vote_average}} / 10 </p>
@@ -45,9 +45,9 @@
                         </div>
                 </div>
                     <div class="col-md-6">
-                        <div class="alert alert-info text-center">Community rating</div>
+                        <div class="alert alert-info text-center"><b>Community rating</b></div>
                         <div class="col-md-3">
-                            <span class="glyphicon glyphicon-star" style="color:yellow ;  font-size: 45px" ></span>
+                            <span class="glyphicon glyphicon-star" style="color:gold ;  font-size: 45px" ></span>
                         </div>
                         <div class="col-md-5 col-md-offset-1">
                             <?php
