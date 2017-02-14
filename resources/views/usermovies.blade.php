@@ -13,7 +13,7 @@
                             @foreach($movies as $movie)
                                 <div class="col-md-3 item">
                                     <div class="thumbnail" style="height: 550px;">
-                                        <img class="group list-group-image" src="{{$movie[0]->base_url . $movie[0]->image}}" alt="">
+                                        <a href="/{{$movie[0]->id}}"><img class="group list-group-image" style="height: 360px;" src="{{$movie[0]->base_url . $movie[0]->image}}" alt=""></a>
                                         <div class="caption">
                                             <h4 class="group inner list-group-item-heading"><a href="/{{$movie[0]->id}}"> {{ $movie[0]->title }} </a></h4>
                                             <p class="group inner list-group-item-text">{{ substr($movie[0]->overview,0,70) . "..."}}</p>
