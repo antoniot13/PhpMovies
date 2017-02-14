@@ -8,11 +8,11 @@
             <div class="col-md-11">
 
                 <h4 style="display:inline ">
-
+                    <span style="border-left:1px solid black"></span>
                     @foreach ($singlemovie[0]->genre_array as $gen)
                         @foreach($gen as $gen1)
                             @if(is_string($gen1))
-                            <span style="border-right:1px solid black">{{ $gen1 }} &nbsp</span>
+                            <span style="border-right:1px solid black"> &nbsp; {{ $gen1 }} &nbsp</span>
                             @endif
                         @endforeach
                     @endforeach

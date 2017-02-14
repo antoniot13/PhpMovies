@@ -45,6 +45,7 @@ class HomeController extends Controller
         $genre = $_POST["order"];
         $movies = TMDBImpl::getMovies();
         usort($movies, "SortImpl::" . $genre);
+        $movies = array_reverse($movies);
         return view('home', ['movies' => $movies]);
     }
 
