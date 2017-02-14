@@ -92,7 +92,10 @@
                             <div class="row">
                                 <div class="col-sm-1">
                                     <div class="thumbnail">
-                                        <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                                        <?php
+                                            $pic=\app\DBImpl::getPictureByUser($comment[0])
+                                            ?>
+                                        <img class="img-responsive user-photo" src="{{$pic}}">
                                     </div><!-- /thumbnail -->
                                 </div><!-- /col-sm-1 -->
                                 <div class="col-sm-5">

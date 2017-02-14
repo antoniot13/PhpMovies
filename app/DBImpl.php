@@ -50,7 +50,7 @@ public static function getRatingsForMovie($id) {
         if ($result = $link->query("select Picture from user_picture where UserId = '" . $id . "'")->fetch_all()) {
             $res = $result[0][0];
         } else {
-            return "defaultLocationOfPicture";
+            $res="uploads/avatar.png";
         }
         mysqli_close($link);
         return $res;
